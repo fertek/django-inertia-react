@@ -1,2 +1,6 @@
 db.sqlite3
 *.pyc
+staticfiles
+assets/dist
+node_modules
+package-lock.json

@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_vite',
     'inertia',
+    'js_routes',
     'core',
 ]
 
@@ -119,6 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = 'staticfiles/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -127,3 +130,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Inertia
 INERTIA_LAYOUT = 'base.html'
+
+# Vite ( https://github.com/MrBin99/django-vite#configuration )
+
+# Where ViteJS assets are built.
+DJANGO_VITE_ASSETS_PATH = BASE_DIR / "assets" / "dist"
+
+# Include DJANGO_VITE_ASSETS_PATH into STATICFILES_DIRS to be copied inside
+# when run command python manage.py collectstatic
+STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
+
+# If use Hot Module Replacement (HMR) or not.
+DJANGO_VITE_DEV_MODE = DEBUG
+
+# https://github.com/ellmetha/django-js-routes
+JS_ROUTES_INCLUSION_LIST = [
+    'home',
+    'contact',
+]
