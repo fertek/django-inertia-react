@@ -23,6 +23,7 @@ Terminal 2:
 
 ```
 # cd inertia/src/
+# source ../venv/bin/activate
 ./manage.py migrate
 ./manage.py runserver
 ```
